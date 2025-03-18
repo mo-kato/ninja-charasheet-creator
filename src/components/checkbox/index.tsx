@@ -19,11 +19,11 @@ function Checkbox({ classNames, ...rest }: Props) {
             display: "block",
             h: "full",
             cursor: "pointer",
-            content: "url('/check_box_outline_blank.svg')",
+            content: "url('/images/check_box_outline_blank.svg')",
           },
           _checked: {
             _before: {
-              content: "url('/select_check_box.svg')",
+              content: "url('/images/select_check_box.svg')",
             },
           },
         }),
