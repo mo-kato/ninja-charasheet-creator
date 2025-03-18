@@ -1,0 +1,32 @@
+{
+  "name": "ninja-charasheet-creator",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "prepare": "panda codegen",
+    "dev": "waku dev -p 4005",
+    "build": "waku build",
+    "start": "waku start",
+    "serve": "npx serve dist/public -p 3005"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^4.1.3",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "react-hook-form": "^7.54.2",
+    "react-icons": "^5.5.0",
+    "react-server-dom-webpack": "19.0.0",
+    "waku": "0.21.21",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@pandacss/dev": "^0.53.0",
+    "@tailwindcss/postcss": "4.0.8",
+    "@types/react": "19.0.10",
+    "@types/react-dom": "19.0.4",
+    "postcss": "8.5.3",
+    "typescript": "5.7.3"
+  }
+}

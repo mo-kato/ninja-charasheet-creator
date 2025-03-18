@@ -1,0 +1,38 @@
+{
+  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "editor.codeActionsOnSave": {
+    "quickfix.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "editor.indentSize": "tabSize",
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "cSpell.words": [
+    "ccfolia",
+    "codegen",
+    "jitsu",
+    "njslyr",
+    "pandacss",
+    "suriken",
+    "TRPG",
+    "waku",
+    "wazamae",
+    "YCNAN"
+  ]
+}
