@@ -2,6 +2,7 @@ import { css } from "@/styled-system/css";
 
 export const header = css({
   justifyContent: "space-between",
+  flexWrap: "nowrap!",
 });
 
 export const buttonArea = css({
