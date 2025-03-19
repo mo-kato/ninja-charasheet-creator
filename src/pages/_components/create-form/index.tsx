@@ -194,9 +194,16 @@ function CreateForm() {
         break;
     }
 
+    const computedData = computeStatus(status);
+
+    // バイオサイバネがある場合は即応ダイスを減らす
+    if (formData.cybernetic === Object.keys(cybernetics)[5]) {
+      computedData.additionalDice -= 1;
+    }
+
     const ninja: NinjaData = {
       status,
-      computedData: computeStatus(status),
+      computedData,
     };
 
     window?.localStorage.setItem(id, JSON.stringify(ninja));

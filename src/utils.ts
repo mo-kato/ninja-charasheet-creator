@@ -127,5 +127,9 @@ export const computeStatus = (status: Status): DiceData => {
   computedData.knowledgeDice += computedData.neuronDice;
   computedData.researchDice += Math.max(computedData.wazamaeDice, computedData.neuronDice);
 
+  // 即応ダイスの計算
+  // 「素手・スリケン」の分は数えないので初期値6として計算
+  computedData.additionalDice = status.weapon.reduce((accumulator, current) => accumulator - current.slot, 6);
+  
   return computedData;
 };
