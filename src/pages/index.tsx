@@ -1,39 +1,45 @@
+import { APP_TITLE } from "@/constants";
 import { css } from "@/styled-system/css";
-import { Link } from "waku";
 
 export const Home = () => (
-  <ul
+  <div
     className={css({
+      textAlign: "left",
+      whiteSpace: "pre-line",
+      maxW: "50rem",
       mx: "auto",
-      maxW: 96,
-      pt: 12,
-      textAlign: "center",
-      "& > li": {
-        pb: 12,
-        "& > a": {
-          fontWeight: "bold",
-          _hover: {
-            _before: {
-              content: "'◆'",
-            },
-            _after: {
-              content: "'◆'",
-            },
-          },
-        },
-      },
+      lineHeight: "loose",
     })}
   >
-    <li>
-      <Link to="/create">新規作成な</Link>
-    </li>
-    <li>
-      <Link to="/list">作ったニンジャを見る</Link>
-    </li>
-    <li>
-      <Link to="/about">このサイトはなんですか？</Link>
-    </li>
-  </ul>
+    <h1
+      className={css({
+        textAlign: "center",
+        lineHeight: "2.5",
+      })}
+    >
+      {"◆ 説明な ◆"}
+    </h1>
+    <p>
+      {APP_TITLE}
+      は、あなたのニンジャスレイヤーTRPGのキャラクターシートの作成を助けます。個人が作った非公式・非公認のファンメイドツールです。公式とは一切関係がない。
+    </p>
+    <p>以下ゴメンナサイ事項です。</p>
+    <ul
+      className={css({
+        "& > li": {
+          textIndent: "4",
+          _before: {
+            content: "'● '",
+          },
+        },
+      })}
+    >
+      <li>作成されたニンジャは、あなたのローカル環境に保存されます。誰とも共有されません。</li>
+      <li>IRC端末のような小さい画面での表示はまだ対応できていません。</li>
+      <li>画像アップロード機能があったら便利なのは十分に理解しています。</li>
+      <li>予告なくサービスを終了する場合があります。</li>
+    </ul>
+  </div>
 );
 
 export const getConfig = async () => {

@@ -50,7 +50,7 @@ export const surikenText = css({
   textWrap: "nowrap",
   fontSize: "md",
   _before: {
-    content: "url('/suriken.svg')",
+    content: "url('/images/suriken.svg')",
     position: "relative",
     top: 1,
     left: -0.5,
