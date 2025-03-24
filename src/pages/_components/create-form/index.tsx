@@ -282,6 +282,7 @@ function CreateForm() {
                     required: true,
                     min: 1,
                     max: 6,
+                    valueAsNumber: true,
                   })}
                 />
                 <Button type="button" onClick={() => handleAbilityD6Click("karate")}>
@@ -296,6 +297,7 @@ function CreateForm() {
                     required: true,
                     min: 1,
                     max: 6,
+                    valueAsNumber: true,
                   })}
                 />
                 <Button type="button" onClick={() => handleAbilityD6Click("neuron")}>
@@ -310,6 +312,7 @@ function CreateForm() {
                     required: true,
                     min: 1,
                     max: 6,
+                    valueAsNumber: true,
                   })}
                 />
                 <Button type="button" onClick={() => handleAbilityD6Click("wazamae")}>
@@ -324,6 +327,7 @@ function CreateForm() {
                     required: true,
                     min: 0,
                     max: 3,
+                    valueAsNumber: true,
                   })}
                 />
                 <Button type="button" onClick={handleD6Minus3Click}>
@@ -337,7 +341,13 @@ function CreateForm() {
             <h3 className={css({ mb: 2, lineHeight: "var(--spacing-8)" })}>
               残りポイント：
               <span className={styled.remainingPoints({ minus: getValues("point") < 0 })}>
-                <input type="number" readOnly {...register("point", { min: 0, max: 11 })} min="0" max="11" />
+                <input
+                  type="number"
+                  readOnly
+                  {...register("point", { min: 0, max: 11, valueAsNumber: true })}
+                  min="0"
+                  max="11"
+                />
               </span>
             </h3>
             <div className={styled.statusContent}>
@@ -351,6 +361,7 @@ function CreateForm() {
                     min: 1,
                     max: 5,
                     onChange: handleAbilityChange,
+                    valueAsNumber: true,
                   })}
                 />
               </TextboxLabel>
@@ -364,6 +375,7 @@ function CreateForm() {
                     min: 1,
                     max: 5,
                     onChange: handleAbilityChange,
+                    valueAsNumber: true,
                   })}
                 />
               </TextboxLabel>
@@ -377,6 +389,7 @@ function CreateForm() {
                     min: 1,
                     max: 5,
                     onChange: handleAbilityChange,
+                    valueAsNumber: true,
                   })}
                 />
               </TextboxLabel>
@@ -390,6 +403,7 @@ function CreateForm() {
                     min: 0,
                     max: 3,
                     onChange: handleAbilityChange,
+                    valueAsNumber: true,
                   })}
                 />
               </TextboxLabel>

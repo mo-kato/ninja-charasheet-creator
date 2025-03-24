@@ -102,7 +102,7 @@ function EditForm() {
             <div className={styled.content}>
               <span>
                 <TextboxLabel labelName="カラテ">
-                  <input type="number" {...register("base.karate")} />
+                  <input type="number" {...register("base.karate", { valueAsNumber: true })} />
                 </TextboxLabel>
                 <TextboxLabel labelName="メモ">
                   <input type="text" {...register("memo.karate")} />
@@ -110,7 +110,7 @@ function EditForm() {
               </span>
               <span>
                 <TextboxLabel labelName="ニューロン">
-                  <input type="number" {...register("base.neuron")} />
+                  <input type="number" {...register("base.neuron", { valueAsNumber: true })} />
                 </TextboxLabel>
                 <TextboxLabel labelName="メモ">
                   <input type="text" {...register("memo.neuron")} />
@@ -118,7 +118,7 @@ function EditForm() {
               </span>
               <span>
                 <TextboxLabel labelName="ワザマエ">
-                  <input type="number" {...register("base.wazamae")} />
+                  <input type="number" {...register("base.wazamae", { valueAsNumber: true })} />
                 </TextboxLabel>
                 <TextboxLabel labelName="メモ">
                   <input type="text" {...register("memo.wazamae")} />
@@ -126,7 +126,7 @@ function EditForm() {
               </span>
               <span>
                 <TextboxLabel labelName="ジツ">
-                  <input type="number" {...register("base.jitsu")} />
+                  <input type="number" {...register("base.jitsu", { valueAsNumber: true })} />
                 </TextboxLabel>
                 <TextboxLabel labelName="メモ">
                   <input type="text" {...register("memo.jitsu")} />
@@ -161,7 +161,7 @@ function EditForm() {
               {(["sushi", "toroSushi", "toroPowder", "cyberPainKiller", "cyberZazen", "zbr"] as const).map(key => (
                 <span key={key}>
                   <TextboxLabel labelName={LABEL_NAMES[key] ?? ""}>
-                    <input type="number" {...register(`potion.${key}`)} min="0" />
+                    <input type="number" {...register(`potion.${key}`, { valueAsNumber: true })} min="0" />
                   </TextboxLabel>
                 </span>
               ))}
@@ -174,7 +174,7 @@ function EditForm() {
               {(["dkk", "fame", "money", "loan"] as const).map(key => (
                 <span key={key}>
                   <TextboxLabel labelName={LABEL_NAMES[key] ?? ""}>
-                    <input type="number" {...register(`wealth.${key}`)} min="0" />
+                    <input type="number" {...register(`wealth.${key}`, { valueAsNumber: true })} min="0" />
                   </TextboxLabel>
                 </span>
               ))}
