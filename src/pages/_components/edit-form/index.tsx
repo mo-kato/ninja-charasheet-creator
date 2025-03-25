@@ -50,6 +50,7 @@ function EditForm() {
   };
 
   const onSubmit: SubmitHandler<Status> = status => {
+    status.skillSlot.sort((a, b) => Number(b.has) - Number(a.has));
     const ninja: NinjaData = {
       status,
       computedData: computeStatus(status),
