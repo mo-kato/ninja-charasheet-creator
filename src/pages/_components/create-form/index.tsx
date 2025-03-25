@@ -175,7 +175,7 @@ function CreateForm() {
       armor: !formData.cybernetic ? [] : [cybernetics[formData.cybernetic]!],
       jitsuSlot: !formData.jitsuSystem || formData.jitsu === 0 ? [] : [{ name: `☆${formData.jitsuSystem} LV1` }],
     });
-    formData.knowledge && status.skillSlot.push({ name: formData.knowledge, has: true });
+    formData.knowledge && status.skillSlot.push({ name: formData.knowledge, has: false });
 
     switch (formData.item) {
       case TABLE.item[0]!:
@@ -236,7 +236,7 @@ function CreateForm() {
             </Button>
           </TextboxLabel>
           <TextboxLabel labelName="種別">
-            <input type="text" {...register("njType", { required: true })} />
+            <input type="text" readOnly {...register("njType", { required: true })} />
           </TextboxLabel>
           <TextboxLabel labelName="所属">
             <input type="text" {...register("affiliation", { required: true })} />

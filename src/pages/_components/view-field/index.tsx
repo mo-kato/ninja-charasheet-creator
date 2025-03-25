@@ -47,10 +47,8 @@ function ViewField() {
 ニューロン　　${ninja.status.base.neuron}　　精神力　　${ninja.computedData.pow}
 ワザマエ　　　${ninja.status.base.wazamae}　　脚力　　　${ninja.computedData.mov}/${showDifficulty(ninja.computedData.highMobilityDiceDifficulty)}
 ジツ　　　　　${ninja.status.base.jitsu}　　万札　　　${ninja.status.wealth.money}
-
 攻撃/射撃/機先/電脳　　${ninja.computedData.additionalDice}/${ninja.computedData.shootingDice}/${ninja.computedData.initiative}/${ninja.computedData.hackingDice}
 回避/精密/側転/発動　　${ninja.computedData.dodge}/${ninja.computedData.precisionDice}/${ninja.computedData.highMobilityDice}/${ninja.computedData.jitsuExecutionDice}
-
 ◇メモ
 ${ninja.status.free}
 `,
@@ -66,17 +64,12 @@ ${ninja.status.free}
             max: ninja.computedData.pow,
           },
           {
-            label: `脚力(側転:${showDifficulty(ninja.computedData.highMobilityDiceDifficulty)})`,
-            value: ninja.computedData.mov,
-            max: ninja.computedData.mov,
-          },
-          {
-            label: "回避D",
+            label: "回避",
             value: ninja.computedData.dodge,
             max: ninja.computedData.dodge,
           },
           {
-            label: "即応D",
+            label: "即応",
             value: ninja.computedData.additionalDice,
             max: ninja.computedData.additionalDice,
           },
@@ -89,12 +82,36 @@ ${ninja.status.free}
             value: ninja.status.wealth.dkk,
             max: 12,
           },
-          {
-            label: "万札",
-            value: ninja.status.wealth.money,
-          },
         ],
         params: [
+          {
+            label: `脚力(側転:${showDifficulty(ninja.computedData.highMobilityDiceDifficulty)})`,
+            value: String(ninja.computedData.mov),
+          },
+          {
+            label: "近接攻撃",
+            value: String(ninja.computedData.attackDice),
+          },
+          {
+            label: "射撃",
+            value: String(ninja.computedData.shootingDice),
+          },
+          {
+            label: "電脳",
+            value: String(ninja.computedData.hackingDice),
+          },
+          {
+            label: "精密",
+            value: String(ninja.computedData.precisionDice),
+          },
+          {
+            label: "連続側転",
+            value: String(ninja.computedData.highMobilityDice),
+          },
+          {
+            label: "ジツ発動",
+            value: String(ninja.computedData.jitsuExecutionDice),
+          },
           {
             label: "カラテ",
             value: String(ninja.computedData.karateDice),
@@ -112,13 +129,13 @@ ${ninja.status.free}
             value: String(ninja.status.base.jitsu),
           },
         ],
-        commands: `${showDifficulty(ninja.computedData.karateDiceDifficulty)}${ninja.computedData.attackDice}[S] ◆近接攻撃判定
-${showDifficulty(ninja.computedData.dodgeDifficulty)}{回避D} ◆回避判定
-${showDifficulty(ninja.computedData.shootingDiceDifficulty)}${ninja.computedData.shootingDice} ◆射撃判定
-${showDifficulty(ninja.computedData.hackingDiceDifficulty)}${ninja.computedData.hackingDice} ◆ハッキング判定
-${showDifficulty(ninja.computedData.precisionDiceDifficulty)}${ninja.computedData.precisionDice} ◆精密判定
-${showDifficulty(ninja.computedData.highMobilityDiceDifficulty)}${ninja.computedData.highMobilityDice} ◆連続側転判定
-${showDifficulty(ninja.computedData.jitsuExecutionDiceDifficulty)}${ninja.computedData.jitsuExecutionDice} ◆ジツ発動判定
+        commands: `${showDifficulty(ninja.computedData.dodgeDifficulty)}{回避} ◆回避判定
+${showDifficulty(ninja.computedData.highMobilityDiceDifficulty)}{連続側転} ◆連続側転判定
+${showDifficulty(ninja.computedData.karateDiceDifficulty)}{近接攻撃}[S] ◆近接攻撃判定
+${showDifficulty(ninja.computedData.shootingDiceDifficulty)}{射撃} ◆射撃判定
+${showDifficulty(ninja.computedData.jitsuExecutionDiceDifficulty)}{ジツ発動} ◆ジツ発動判定
+${showDifficulty(ninja.computedData.hackingDiceDifficulty)}{電脳} ◆ハッキング判定
+${showDifficulty(ninja.computedData.precisionDiceDifficulty)}{精密} ◆精密判定
 ${showDifficulty(ninja.computedData.negotiationDiceDifficulty)}${ninja.computedData.negotiationDice} ◆交渉判定判定
 ${showDifficulty(ninja.computedData.knowledgeDiceDifficulty)}${ninja.computedData.knowledgeDice} ◆知識判定判定
 ${showDifficulty(ninja.computedData.researchDiceDifficulty)}${ninja.computedData.researchDice} ◆調査判定判定
