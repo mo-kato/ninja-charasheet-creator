@@ -74,7 +74,7 @@ ${ninja.status.free}
             max: ninja.computedData.additionalDice,
           },
           {
-            label: "緊急D",
+            label: "緊急",
             value: ninja.computedData.additionalDodgeDice,
           },
           {
