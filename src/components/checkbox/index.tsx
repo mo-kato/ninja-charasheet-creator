@@ -5,10 +5,11 @@ interface Props extends ComponentPropsWithRef<"input"> {
   classNames?: string[];
 }
 
-function Checkbox({ classNames, ...rest }: Props) {
+function Checkbox({ classNames, ref, ...rest }: Props) {
   return (
     <input
       type="checkbox"
+      ref={ref}
       {...rest}
       className={cx(
         css({

@@ -1,7 +1,7 @@
 import { css, cx } from "@/styled-system/css";
-import { type ComponentPropsWithRef, memo } from "react";
+import { type ComponentPropsWithoutRef, memo } from "react";
 
-interface Props extends ComponentPropsWithRef<"section"> {
+interface Props extends ComponentPropsWithoutRef<"section"> {
   classNames?: string[];
 }
 

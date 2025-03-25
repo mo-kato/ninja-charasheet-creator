@@ -9,9 +9,10 @@ interface Props extends ComponentPropsWithRef<"select"> {
   labels?: string[];
 }
 
-function Selectbox({ options, labels, name, ...rest }: Props) {
+function Selectbox({ options, labels, ref, ...rest }: Props) {
   return (
     <select
+      ref={ref}
       {...rest}
       className={css({
         h: "full",

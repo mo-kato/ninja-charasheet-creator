@@ -37,6 +37,7 @@ export const effect = css({
   maxH: 28,
   overflowX: "auto",
   minW: 40,
+  textAlign: "left!",
 });
 
 export const preWrap = css({

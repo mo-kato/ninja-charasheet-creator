@@ -1,9 +1,9 @@
 import { cx } from "@/styled-system/css";
 import { flex } from "@/styled-system/patterns";
-import { type ComponentPropsWithRef, memo } from "react";
+import { type ComponentPropsWithoutRef, memo } from "react";
 import { Link } from "waku";
 
-interface Props extends ComponentPropsWithRef<typeof Link> {
+interface Props extends ComponentPropsWithoutRef<typeof Link> {
   buttonType?: "primary" | "secondary" | "tertiary";
   classNames?: string[];
 }

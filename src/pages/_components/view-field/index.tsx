@@ -385,7 +385,9 @@ ${showDifficulty(ninja.computedData.wazamaeDiceDifficulty)}{ワザマエ} ◆ワ
                         名称
                       </th>
                       <th scope="col">種別</th>
-                      <th scope="col">判定補正値</th>
+                      <th scope="col" className="left">
+                        判定補正値
+                      </th>
                       <th scope="col" className="left">
                         備考
                       </th>
@@ -404,7 +406,7 @@ ${showDifficulty(ninja.computedData.wazamaeDiceDifficulty)}{ワザマエ} ◆ワ
                         <td>{armor.part}</td>
                         <td className="left">{armor.name}</td>
                         <td>{armor.type}</td>
-                        <td>
+                        <td className="left">
                           {armor.correction?.map(correction => (
                             <span
                               key={`armor-${armor}-${correction.key}`}
@@ -480,7 +482,9 @@ ${showDifficulty(ninja.computedData.wazamaeDiceDifficulty)}{ワザマエ} ◆ワ
                       <th scope="col" className="left">
                         名称
                       </th>
-                      <th scope="col">判定補正値</th>
+                      <th scope="col" className="left">
+                        判定補正値
+                      </th>
                       <th scope="col" className="left">
                         備考
                       </th>
@@ -497,7 +501,7 @@ ${showDifficulty(ninja.computedData.wazamaeDiceDifficulty)}{ワザマエ} ◆ワ
                           )}
                         </td>
                         <td className="left">{skill.name}</td>
-                        <td>
+                        <td className="left">
                           {skill.correction?.map(correction => (
                             <span
                               key={`weapon-${skill.name}-${correction.key}-key`}

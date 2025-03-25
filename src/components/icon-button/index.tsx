@@ -7,9 +7,10 @@ interface Props extends ComponentPropsWithRef<"button"> {
   classNames?: string[];
 }
 
-function IconButton({ classNames, children, ...rest }: Props) {
+function IconButton({ classNames, children, ref, ...rest }: Props) {
   return (
     <button
+      ref={ref}
       {...rest}
       className={cx(
         flex({
