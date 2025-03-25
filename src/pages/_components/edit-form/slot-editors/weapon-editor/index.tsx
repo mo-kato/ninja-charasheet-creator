@@ -1,8 +1,8 @@
 "use client";
 
 import { memo } from "react";
-import { MdAdd, MdDelete } from "react-icons/md";
 import { useFieldArray } from "react-hook-form";
+import { MdAdd, MdDelete } from "react-icons/md";
 
 import Button from "@/components/button";
 import Checkbox from "@/components/checkbox";
@@ -41,7 +41,7 @@ function WeaponEditor({ register, control }: CommonSlotProps) {
                 <input type="text" placeholder="名称" {...register(`weapon.${index}.name`)} />
               </td>
               <td className="left">
-                <input type="number" {...register(`weapon.${index}.slot`)} />
+                <input type="number" {...register(`weapon.${index}.slot`, { valueAsNumber: true })} />
               </td>
               <td className="left">
                 <CorrectionEditor

@@ -33,7 +33,10 @@ function LikeabilityEditor({ register, control }: CommonSlotProps) {
                 <input type="text" {...register(`wealth.likeability.${index}.name`)} placeholder="人名" />
               </td>
               <td className="left">
-                <input type="number" {...register(`wealth.likeability.${index}.likeability`)} />
+                <input
+                  type="number"
+                  {...register(`wealth.likeability.${index}.likeability`, { valueAsNumber: true })}
+                />
               </td>
               <td>
                 <Button type="button" buttonType="tertiary" onClick={() => remove(index)}>
