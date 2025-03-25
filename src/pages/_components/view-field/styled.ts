@@ -31,6 +31,7 @@ export const freeMemo = css({
   borderRadius: "sm",
   minH: 10,
   w: "full",
+  whiteSpace: "pre-wrap",
 });
 
 export const effect = css({
