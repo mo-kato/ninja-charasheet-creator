@@ -107,11 +107,14 @@ export const computeStatus = (status: Status): DiceData => {
   };
 
   // 装備（アーマー・武器・スキル）を走査し補正値を適用
-  for (const item of [...status.skillSlot, ...status.armor]) {
+  for (const item of [
+    ...status.skillSlot.filter(skill => skill.has),
+    ...status.armor.filter(armor => armor.isWearing),
+  ]) {
     applyCorrection(item.correction);
   }
 
-  for (const weapon of status.weapon) {
+  for (const weapon of status.weapon.filter(weapon => weapon.isWearing)) {
     applyCorrection(weapon.passiveCorrection);
     applyCorrection(weapon.equippedCorrection);
   }
