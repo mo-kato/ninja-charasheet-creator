@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { useRouter_UNSTABLE as useRouter } from "waku";
+import { useRouter } from "waku";
 
 const useParams = () => {
   const { query } = useRouter();

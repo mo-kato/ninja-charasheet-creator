@@ -398,9 +398,9 @@ ${showDifficulty(ninja.computedData.wazamaeDiceDifficulty)}{ワザマエ} ◆ワ
                       <tr key={armor.name}>
                         <td>
                           {armor.isWearing ? (
-                            <img src="images/select_check_box.svg" alt="装備中" />
+                            <img src="/images/select_check_box.svg" alt="装備中" />
                           ) : (
-                            <img src="images/check_box_outline_blank.svg" alt="所持" />
+                            <img src="/images/check_box_outline_blank.svg" alt="所持" />
                           )}
                         </td>
                         <td>{armor.part}</td>
@@ -443,9 +443,9 @@ ${showDifficulty(ninja.computedData.wazamaeDiceDifficulty)}{ワザマエ} ◆ワ
                       <tr key={weapon.name}>
                         <td>
                           {weapon.isWearing ? (
-                            <img src="images/select_check_box.svg" alt="装備中" />
+                            <img src="/images/select_check_box.svg" alt="装備中" />
                           ) : (
-                            <img src="images/check_box_outline_blank.svg" alt="所持" />
+                            <img src="/images/check_box_outline_blank.svg" alt="所持" />
                           )}
                         </td>
                         <td className="left">{weapon.name}</td>
@@ -495,9 +495,9 @@ ${showDifficulty(ninja.computedData.wazamaeDiceDifficulty)}{ワザマエ} ◆ワ
                       <tr key={skill.name}>
                         <td>
                           {skill.has ? (
-                            <img src="images/select_check_box.svg" alt="所持" />
+                            <img src="/images/select_check_box.svg" alt="所持" />
                           ) : (
-                            <img src="images/check_box_outline_blank.svg" alt="記憶" />
+                            <img src="/images/check_box_outline_blank.svg" alt="記憶" />
                           )}
                         </td>
                         <td className="left">{skill.name}</td>

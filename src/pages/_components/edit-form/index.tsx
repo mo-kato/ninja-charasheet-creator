@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
-import { Link, useRouter_UNSTABLE as useRouter } from "waku";
+import { Link, useRouter } from "waku";
 import * as styled from "./styled";
 
 import Button from "@/components/button";
