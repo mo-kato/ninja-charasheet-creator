@@ -7,6 +7,7 @@ export const label = css({
 
 export const labelName = css({
   lineHeight: "loose",
+  letterSpacing: "-0.5px",
 });
 
 export const inputs = css({

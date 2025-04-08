@@ -14,7 +14,6 @@ function CommonTable({ classNames, children, ...rest }: Props) {
           borderCollapse: "collapse",
           borderRadius: "sm",
           bgColor: "background.subtle",
-          tableLayout: "fixed",
           fontSize: "sm",
           "& th, td": {
             p: 2,
@@ -62,6 +61,9 @@ function CommonTable({ classNames, children, ...rest }: Props) {
                   borderStyle: "solid",
                   borderColor: "foreground.mute",
                   p: 1,
+                },
+                "& > textarea": {
+                  w: "full",
                 },
                 '& > input[type="number"]': {
                   w: 14,

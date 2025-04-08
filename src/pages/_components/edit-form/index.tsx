@@ -79,7 +79,7 @@ function EditForm() {
                 <input type="text" {...register("person.njName", { required: true })} />
               </TextboxLabel>
               <TextboxLabel labelName="種別">
-                <input type="text" {...register("person.njType", { required: true })} />
+                <input type="text" {...register("person.njType", { required: true })} readOnly />
               </TextboxLabel>
               <TextboxLabel labelName="所属">
                 <input type="text" {...register("person.affiliation", { required: true })} />

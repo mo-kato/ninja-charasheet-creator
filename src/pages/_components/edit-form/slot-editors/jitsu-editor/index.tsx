@@ -21,8 +21,8 @@ function JitsuEditor({ register, control }: CommonSlotProps) {
       <CommonTable classNames={[css({ mt: 2, mb: 3 })]}>
         <thead>
           <tr>
-            <th className="left">ジツ名</th>
-            <th className="left">効果</th>
+            <th className={`left ${css({ w: "25%" })}`}>ジツ名</th>
+            <th className={`left ${css({ w: "full" })}`}>効果</th>
             <th>削除</th>
           </tr>
         </thead>
@@ -30,7 +30,12 @@ function JitsuEditor({ register, control }: CommonSlotProps) {
           {fields.map((jitsu, index) => (
             <tr key={jitsu.id}>
               <td className="left">
-                <input type="text" {...register(`jitsuSlot.${index}.name`)} placeholder="ジツ名" />
+                <input
+                  type="text"
+                  {...register(`jitsuSlot.${index}.name`)}
+                  placeholder="ジツ名"
+                  className={css({ w: "full" })}
+                />
               </td>
               <td className="left">
                 <textarea {...register(`jitsuSlot.${index}.effect`)} />

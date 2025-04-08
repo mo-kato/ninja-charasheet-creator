@@ -22,12 +22,12 @@ function WeaponEditor({ register, control }: CommonSlotProps) {
       <CommonTable classNames={[css({ mt: 2, mb: 3 })]}>
         <thead>
           <tr>
-            <th>装備/所持</th>
+            <th>装備</th>
             <th className="left">名称</th>
             <th className="left">スロット</th>
             <th className="left">所持補正値</th>
             <th className="left">装備補正値</th>
-            <th className="left">効果</th>
+            <th className={`left ${css({ w: "full" })}`}>効果</th>
             <th>削除</th>
           </tr>
         </thead>

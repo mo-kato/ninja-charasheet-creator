@@ -23,10 +23,10 @@ function SkillEditor({ register, control }: CommonSlotProps) {
       <CommonTable classNames={[css({ mt: 2, mb: 3 })]}>
         <thead>
           <tr>
-            <th>所持/記憶</th>
+            <th>所持</th>
             <th className="left">スキル名</th>
             <th className="left">補正値</th>
-            <th className="left">効果</th>
+            <th className={`left ${css({ w: "full" })}`}>効果</th>
             <th>削除</th>
           </tr>
         </thead>

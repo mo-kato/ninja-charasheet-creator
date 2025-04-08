@@ -65,6 +65,7 @@ export const nancy = css({
   p: 4,
   bottom: 6,
   right: 4,
+  zIndex: 1,
   "& a": {
     fontSize: "md",
     textDecorationLine: "underline",
