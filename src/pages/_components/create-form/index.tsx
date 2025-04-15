@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { type SubmitHandler, useForm } from "react-hook-form";
+import { type SubmitHandler, useForm, useWatch } from "react-hook-form";
 import { MdClose } from "react-icons/md";
 import { useRouter } from "waku";
 import * as styled from "./styled";
@@ -46,7 +46,7 @@ function CreateForm() {
     getValues,
     resetField,
     handleSubmit,
-    watch,
+    control,
     formState: { isValid },
   } = useForm<CreateForm>({
     mode: "onBlur",
@@ -69,8 +69,8 @@ function CreateForm() {
       skill: "",
     },
   });
-  const watchiJitsu = Number(watch("jitsu"));
-  const watchCybernetic = watch("cybernetic");
+  const watchiJitsu = useWatch({ control, name: "jitsu" });
+  const watchCybernetic = useWatch({ control, name: "cybernetic" });
 
   const handleNameGeneratorClick = () => {
     const A1 = roll1D6() - 1;
@@ -166,14 +166,15 @@ function CreateForm() {
         goodKarma: formData.goodKarma,
       },
       base: {
-        karate: Number(formData.karate),
-        neuron: Number(formData.neuron),
-        wazamae: Number(formData.wazamae),
-        jitsu: Number(formData.jitsu),
+        karate: formData.karate,
+        neuron: formData.neuron,
+        wazamae: formData.wazamae,
+        jitsu: formData.jitsu,
       },
       skillSlot: !formData.skill || formData.jitsu > 0 ? [] : [{ ...skills[formData.skill]!, has: true }],
       armor: !formData.cybernetic ? [] : [cybernetics[formData.cybernetic]!],
-      jitsuSlot: !formData.jitsuSystem || formData.jitsu === 0 ? [] : [{ name: `☆${formData.jitsuSystem} LV1` }],
+      jitsuSlot:
+        !formData.jitsuSystem || formData.jitsu === 0 ? [] : [{ name: `☆${formData.jitsuSystem} LV${formData.jitsu}` }],
     });
     formData.knowledge && status.skillSlot.push({ name: formData.knowledge, has: false });
 

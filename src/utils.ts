@@ -125,7 +125,7 @@ export const computeStatus = (status: Status): DiceData => {
   computedData.highMobilityDice += computedData.wazamaeDice;
   computedData.precisionDice += computedData.wazamaeDice;
   computedData.negotiationDice += computedData.wazamaeDice;
-  computedData.initiative += computedData.neuronDice;
+  computedData.initiative += computedData.neuron;
   computedData.hackingDice += computedData.neuronDice;
   computedData.knowledgeDice += computedData.neuronDice;
   computedData.researchDice += Math.max(computedData.wazamaeDice, computedData.neuronDice);
