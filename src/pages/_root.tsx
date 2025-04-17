@@ -7,7 +7,7 @@ export default function Root({ children }: { children: ReactNode }) {
   return (
     <html lang="ja">
       <head>
-        {/* <link rel="icon" type="image/png" href="/images/favicon.png" /> */}
+        <link rel="icon" type="image/png" href="/favicon.png" />
         <title>{APP_TITLE}</title>
       </head>
       <body>{children}</body>
