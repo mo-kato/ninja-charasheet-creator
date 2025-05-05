@@ -21,6 +21,7 @@ function Checkbox({ classNames, ref, ...rest }: Props) {
             h: "full",
             cursor: "pointer",
             content: "url('/images/check_box_outline_blank.svg')",
+            textAlign: "center",
           },
           _checked: {
             _before: {

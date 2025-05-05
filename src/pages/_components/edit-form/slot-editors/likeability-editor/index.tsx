@@ -9,9 +9,10 @@ import CommonTable from "@/components/common-table";
 import IconButton from "@/components/icon-button";
 import { css } from "@/styled-system/css";
 import type { CommonSlotProps } from "@/type";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 function LikeabilityEditor({ register, control }: CommonSlotProps) {
-  const { fields, append, remove } = useFieldArray({
+  const { fields, append, remove, move } = useFieldArray({
     control,
     name: "wealth.likeability",
   });
@@ -23,6 +24,7 @@ function LikeabilityEditor({ register, control }: CommonSlotProps) {
           <tr>
             <th className="left">人名</th>
             <th className="left">親密度</th>
+            <th>移動</th>
             <th>削除</th>
           </tr>
         </thead>
@@ -37,6 +39,18 @@ function LikeabilityEditor({ register, control }: CommonSlotProps) {
                   type="number"
                   {...register(`wealth.likeability.${index}.likeability`, { valueAsNumber: true })}
                 />
+              </td>
+              <td>
+                {index !== 0 && (
+                  <Button type="button" buttonType="tertiary" onClick={() => move(index, index - 1)}>
+                    <FaChevronUp size={15} />
+                  </Button>
+                )}
+                {index !== fields.length - 1 && (
+                  <Button type="button" buttonType="tertiary" onClick={() => move(index, index + 1)}>
+                    <FaChevronDown size={15} />
+                  </Button>
+                )}
               </td>
               <td>
                 <Button type="button" buttonType="tertiary" onClick={() => remove(index)}>

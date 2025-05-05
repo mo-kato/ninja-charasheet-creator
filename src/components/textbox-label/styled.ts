@@ -3,11 +3,13 @@ import { css } from "@/styled-system/css";
 export const label = css({
   display: "flex",
   flexDirection: "column",
+  minW: 0,
 });
 
 export const labelName = css({
   lineHeight: "loose",
   letterSpacing: "-0.5px",
+  whiteSpace: "nowrap",
 });
 
 export const inputs = css({

@@ -71,6 +71,7 @@ function CreateForm() {
   });
   const watchiJitsu = useWatch({ control, name: "jitsu" });
   const watchCybernetic = useWatch({ control, name: "cybernetic" });
+  const watchPoint = useWatch({ control, name: "point" });
 
   const handleNameGeneratorClick = () => {
     const A1 = roll1D6() - 1;
@@ -229,7 +230,7 @@ function CreateForm() {
 
       <Section>
         <h2>人物設定</h2>
-        <div className={styled.content}>
+        <div className={cx(styled.content, css({ flexWrap: "nowrap" }))}>
           <TextboxLabel labelName="ニンジャネーム">
             <input type="text" {...register("njName", { required: true })} />
             <Button type="button" onClick={handleNameGeneratorClick}>
@@ -341,7 +342,7 @@ function CreateForm() {
           <>
             <h3 className={css({ mb: 2, lineHeight: "var(--spacing-8)" })}>
               残りポイント：
-              <span className={styled.remainingPoints({ minus: getValues("point") < 0 })}>
+              <span className={styled.remainingPoints({ minus: watchPoint < 0 })}>
                 <input
                   type="number"
                   readOnly
@@ -426,11 +427,23 @@ function CreateForm() {
                   required: true,
                 })}
               >
-                <option value="" disabled>
+                <option
+                  value=""
+                  disabled
+                  className={css({
+                    bgColor: "background.subtle",
+                  })}
+                >
                   {""}
                 </option>
                 {TABLE.skill.map((skill, i) => (
-                  <option key={skill} value={skill}>
+                  <option
+                    key={skill}
+                    value={skill}
+                    className={css({
+                      bgColor: "background.subtle",
+                    })}
+                  >
                     {skill}
                   </option>
                 ))}
@@ -448,7 +461,13 @@ function CreateForm() {
               {jitsuSystemRolled && jitsuSystemRolled === 5 ? (
                 <select {...register("jitsuSystem", { required: true })}>
                   {TABLE.jitsuSystem.map(jitsuSystem => (
-                    <option key={jitsuSystem} value={jitsuSystem}>
+                    <option
+                      key={jitsuSystem}
+                      value={jitsuSystem}
+                      className={css({
+                        bgColor: "background.subtle",
+                      })}
+                    >
                       {jitsuSystem}
                     </option>
                   ))}

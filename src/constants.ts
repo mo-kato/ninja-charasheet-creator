@@ -1,4 +1,4 @@
-import type { ComputedDataKey, Equipment, Skill, StatusKey, Weapon } from "@/type";
+import type { Armor, ComputedDataKey, Skill, StatusKey, Weapon } from "@/type";
 
 export const APP_TITLE = "【非公式な】ニンジャクリエイシヨンツール◆";
 
@@ -103,7 +103,7 @@ export const items: { [key: string]: any } = {
     ],
     effect: "その他使い捨て効果あり",
     isWearing: true,
-  } as Equipment,
+  } as Armor,
   オーガニック・スシ: "sushi",
   トロ粉末: "toroPowder",
   ウイルス入りフロッピー: {
@@ -131,12 +131,11 @@ export const items: { [key: string]: any } = {
   } as Weapon,
 } as const;
 
-export const cybernetics: { [key: string]: Equipment } = {
+export const cybernetics: { [key: string]: Armor } = {
   "▶︎テッコLV1": {
     name: "▶︎テッコLV1",
     part: "腕部",
-    type: "戦闘用サイバネ",
-    cyberneticLv: 1,
+    type: "基礎サイバネ",
     isWearing: true,
     correction: [
       {
@@ -152,8 +151,7 @@ export const cybernetics: { [key: string]: Equipment } = {
   "▶︎ヒキャクLV1": {
     name: "▶︎ヒキャクLV1",
     part: "脚部",
-    type: "戦闘用サイバネ",
-    cyberneticLv: 1,
+    type: "基礎サイバネ",
     isWearing: true,
     correction: [
       {
@@ -168,9 +166,8 @@ export const cybernetics: { [key: string]: Equipment } = {
   },
   "▶︎サイバネアイLV1": {
     name: "▶︎サイバネアイLV1",
-    type: "戦闘用サイバネ",
+    type: "基礎サイバネ",
     part: "頭部",
-    cyberneticLv: 1,
     isWearing: true,
     correction: [
       {
@@ -185,8 +182,7 @@ export const cybernetics: { [key: string]: Equipment } = {
   },
   "▶︎生体LAN端子LV1": {
     name: "▶︎生体LAN端子LV1",
-    type: "戦闘用サイバネ",
-    cyberneticLv: 1,
+    type: "基礎サイバネ",
     part: "電脳",
     isWearing: true,
     correction: [
@@ -199,8 +195,7 @@ export const cybernetics: { [key: string]: Equipment } = {
   },
   "▶︎クロームハートLV1": {
     name: "▶︎クロームハートLV1",
-    type: "戦闘用サイバネ",
-    cyberneticLv: 1,
+    type: "基礎サイバネ",
     part: "胴体",
     isWearing: true,
     correction: [
@@ -216,8 +211,7 @@ export const cybernetics: { [key: string]: Equipment } = {
   },
   "▲▲戦闘用バイオサイバネLV1": {
     name: "▲▲戦闘用バイオサイバネLV1",
-    type: "戦闘用バイオサイバネ",
-    cyberneticLv: 2,
+    type: "基礎サイバネ",
     part: "頭・腕",
     isWearing: true,
     correction: [

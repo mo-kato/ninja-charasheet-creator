@@ -10,6 +10,7 @@ export const content = flex({
   flexWrap: "nowrap",
   alignItems: "flex-end",
   mb: 2,
+  maxW: "full",
   "& > span": {
     minW: 0,
     flexShrink: 1,

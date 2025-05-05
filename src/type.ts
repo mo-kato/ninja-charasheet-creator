@@ -1,10 +1,10 @@
 import type {
   armorPartSchema,
+  armorSchema,
   armorTypeSchema,
   computedDataKeySchema,
   computedDataSchema,
   correctionSchema,
-  equipmentSchema,
   fileSchema,
   likeabilitySchema,
   ninjaDataSchema,
@@ -51,11 +51,12 @@ export type StatusKey =
   | "free";
 
 export type ArmorPart = z.infer<typeof armorPartSchema>;
+export type BasicArmorPart = z.infer<typeof armorPartSchema>;
 export type ArmorType = z.infer<typeof armorTypeSchema>;
 export type Correction = z.infer<typeof correctionSchema>;
 export type Likeability = z.infer<typeof likeabilitySchema>;
 export type Skill = z.infer<typeof skillSchema>;
-export type Equipment = z.infer<typeof equipmentSchema>;
+export type Armor = z.infer<typeof armorSchema>;
 export type Weapon = z.infer<typeof weaponSchema>;
 export type Status = z.infer<typeof statusSchema>;
 export type NinjaData = z.infer<typeof ninjaDataSchema>;

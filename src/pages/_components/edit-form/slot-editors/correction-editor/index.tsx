@@ -42,7 +42,7 @@ function CorrectionEditor({ name, register, control }: Props) {
       ))}
       <div className={styled.correctionSelect}>
         <Selectbox
-          options={[...computedDataKeySchema.options]}
+          options={[...computedDataKeySchema.exclude(["karate", "neuron", "wazamae", "jitsu"]).options]}
           value={selectedKey}
           onChange={e => setSelectedKey(e.target.value as ComputedDataKey)}
         />

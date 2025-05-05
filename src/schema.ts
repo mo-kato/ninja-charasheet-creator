@@ -42,8 +42,8 @@ export const computedDataSchema = z.object({
 export const computedDataKeySchema = computedDataSchema.keyof();
 
 // 装備部位と装備タイプの Enum
-export const armorPartSchema = z.enum(["頭部", "腕部", "胴体", "脚部", "レリック", "電脳", "頭・腕", "胴・脚"]);
-export const armorTypeSchema = z.enum(["防具", "戦闘用サイバネ", "戦闘用バイオサイバネ"]);
+export const armorPartSchema = z.enum(["頭部", "腕部", "胴体", "脚部", "電脳", "レリック", "頭・腕", "胴・脚"]);
+export const armorTypeSchema = z.enum(["防具", "基礎サイバネ", "追加サイバネ"]);
 
 // 真偽値の型
 export const hasSchema = z.boolean();
@@ -70,11 +70,10 @@ export const skillSchema = z.object({
 });
 
 // 装備
-export const equipmentSchema = z.object({
+export const armorSchema = z.object({
   name: z.string(),
   type: armorTypeSchema,
   part: armorPartSchema,
-  cyberneticLv: z.number(),
   correction: z.array(correctionSchema).nullable().optional(),
   effect: z.string().nullable().optional(),
   isWearing: isWearingSchema.optional(),
@@ -128,7 +127,7 @@ export const statusSchema = z.object({
     cyberZazen: z.number().min(0),
     zbr: z.number().min(0),
   }),
-  armor: z.array(equipmentSchema),
+  armor: z.array(armorSchema),
   weapon: z.array(weaponSchema),
   skillSlot: z.array(skillSchema),
   jitsuSlot: z.array(skillSchema),

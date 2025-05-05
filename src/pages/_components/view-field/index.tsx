@@ -12,6 +12,7 @@ import NancyChat from "@/components/nancy-chat";
 import Section from "@/components/section";
 import { LABEL_NAMES } from "@/constants";
 import useNinja from "@/hooks/use-ninja";
+import { css } from "@/styled-system/css";
 
 function ViewField() {
   const { ninja, id } = useNinja();
@@ -373,22 +374,25 @@ ${showDifficulty(ninja.computedData.wazamaeDiceDifficulty)}{ワザマエ} ◆ワ
           </Section>
 
           <Section classNames={[styled.section]}>
-            <div>
+            <div className={css({ w: "full" })}>
               {ninja.status.armor.length > 0 && (
                 <CommonTable>
                   <caption className={styled.surikenText}>防具</caption>
                   <thead>
                     <tr>
-                      <th scope="col">装備</th>
-                      <th scope="col">部位</th>
-                      <th scope="col" className="left">
+                      <th scope="col" className={`left ${css({ w: "7%" })}`}>
+                        部位
+                      </th>
+                      <th scope="col" className={`left ${css({ w: "13%" })}`}>
                         名称
                       </th>
-                      <th scope="col">種別</th>
-                      <th scope="col" className="left">
+                      <th scope="col" className={`left ${css({ w: "10%" })}`}>
+                        種別
+                      </th>
+                      <th scope="col" className={`left ${css({ w: "13%" })}`}>
                         判定補正値
                       </th>
-                      <th scope="col" className="left">
+                      <th scope="col" className={`left ${css({ w: "100%" })}`}>
                         備考
                       </th>
                     </tr>
@@ -396,16 +400,9 @@ ${showDifficulty(ninja.computedData.wazamaeDiceDifficulty)}{ワザマエ} ◆ワ
                   <tbody>
                     {ninja.status.armor.map(armor => (
                       <tr key={armor.name}>
-                        <td>
-                          {armor.isWearing ? (
-                            <img src="/images/select_check_box.svg" alt="装備中" />
-                          ) : (
-                            <img src="/images/check_box_outline_blank.svg" alt="所持" />
-                          )}
-                        </td>
-                        <td>{armor.part}</td>
+                        <td className="left">{armor.part}</td>
                         <td className="left">{armor.name}</td>
-                        <td>{armor.type}</td>
+                        <td className="left">{armor.type}</td>
                         <td className="left">
                           {armor.correction?.map(correction => (
                             <span
@@ -426,14 +423,20 @@ ${showDifficulty(ninja.computedData.wazamaeDiceDifficulty)}{ワザマエ} ◆ワ
                   <caption className={styled.surikenText}>武器</caption>
                   <thead>
                     <tr>
-                      <th scope="col">装備</th>
-                      <th scope="col" className="left">
+                      <th scope="col" className={css({ w: "1%" })}>
+                        装備
+                      </th>
+                      <th scope="col" className={`left ${css({ w: "13%" })}`}>
                         名称
                       </th>
                       <th scope="col">スロット</th>
-                      <th scope="col">補正値:所持</th>
-                      <th scope="col">補正値:装備</th>
-                      <th scope="col" className="left">
+                      <th scope="col" className={`left ${css({ w: "10%" })}`}>
+                        補正値:所持
+                      </th>
+                      <th scope="col" className={`left ${css({ w: "13%" })}`}>
+                        補正値:装備
+                      </th>
+                      <th scope="col" className={`left ${css({ w: "100%" })}`}>
                         備考
                       </th>
                     </tr>
@@ -441,7 +444,7 @@ ${showDifficulty(ninja.computedData.wazamaeDiceDifficulty)}{ワザマエ} ◆ワ
                   <tbody>
                     {ninja.status.weapon.map(weapon => (
                       <tr key={weapon.name}>
-                        <td>
+                        <td className={css({ w: "1%" })}>
                           {weapon.isWearing ? (
                             <img src="/images/select_check_box.svg" alt="装備中" />
                           ) : (
@@ -464,7 +467,7 @@ ${showDifficulty(ninja.computedData.wazamaeDiceDifficulty)}{ワザマエ} ◆ワ
                             >{`${LABEL_NAMES[correction.key]} ${correction.size > 0 ? "+" : ""}${correction.size} `}</span>
                           ))}
                         </td>
-                        <td className="left">
+                        <td className={`left ${css({ w: "100%" })}`}>
                           <div className={styled.effect}>{weapon.effect}</div>
                         </td>
                       </tr>
@@ -478,11 +481,13 @@ ${showDifficulty(ninja.computedData.wazamaeDiceDifficulty)}{ワザマエ} ◆ワ
                   <caption className={styled.surikenText}>スキル</caption>
                   <thead>
                     <tr>
-                      <th scope="col">所持</th>
-                      <th scope="col" className="left">
+                      <th scope="col" className={css({ w: "1%" })}>
+                        所持
+                      </th>
+                      <th scope="col" className={`left ${css({ w: "15%" })}`}>
                         名称
                       </th>
-                      <th scope="col" className="left">
+                      <th scope="col" className={`left ${css({ w: "13%" })}`}>
                         判定補正値
                       </th>
                       <th scope="col" className="left">

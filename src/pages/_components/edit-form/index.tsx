@@ -79,7 +79,7 @@ function EditForm() {
                 <input type="text" {...register("person.njName", { required: true })} />
               </TextboxLabel>
               <TextboxLabel labelName="種別">
-                <input type="text" {...register("person.njType", { required: true })} readOnly />
+                <input type="text" {...register("person.njType", { required: true })} />
               </TextboxLabel>
               <TextboxLabel labelName="所属">
                 <input type="text" {...register("person.affiliation", { required: true })} />
@@ -137,17 +137,17 @@ function EditForm() {
           </Section>
 
           <Section>
-            <h2>防具スロット</h2>
+            <h2>防具・サイバネスロット</h2>
             <ArmorEditor {...{ register, control }} />
           </Section>
 
           <Section>
-            <h2>武器スロット</h2>
+            <h2 className={css({ display: "inline-block", mr: 4 })}>武器スロット</h2>
             <WeaponEditor {...{ register, control }} />
           </Section>
 
           <Section>
-            <h2>スキルスロット</h2>
+            <h2 className={css({ display: "inline-block", mr: 4 })}>スキルスロット</h2>
             <SkillEditor {...{ register, control }} />
           </Section>
 
